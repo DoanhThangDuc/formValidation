@@ -71,22 +71,22 @@
       formGroupSelector: '.form-group',
       rules:
         [ //fullname
-          Validator.isRequired("#fullname", 'vui lòng nhập tên của bạn'),
-          //email
-          Validator.isRequired("#email", 'vui lòng nhập email của bạn'),
-          Validator.isEmail("#email", 'Email  không chính xác, vui lòng xác nhận lại email của bạn'),
-          //password
-          Validator.isRequired("#password", 'vui lòng nhập mật khẩu của bạn'),
-          Validator.isPassword("#password", 6, 'mật khẩu cần lớn hơn 6 ký tự'),
-          //password confirmation
-          Validator.isRequired("#password_confirmation", 'vui lòng xác nhận lại mật khẩu của bạn'),
-          Validator.isConfirm('#password_confirmation', function () {
-            return document.querySelector('#form-1 #password').value
-          }, 'Mật khẩu nhập lại không chính xác'),
+          // Validator.isRequired("#fullname", 'vui lòng nhập tên của bạn'),
+          // //email
+          // Validator.isRequired("#email", 'vui lòng nhập email của bạn'),
+          // Validator.isEmail("#email", 'Email  không chính xác, vui lòng xác nhận lại email của bạn'),
+          // //password
+          // Validator.isRequired("#password", 'vui lòng nhập mật khẩu của bạn'),
+          // Validator.isPassword("#password", 6, 'mật khẩu cần lớn hơn 6 ký tự'),
+          // //password confirmation
+          // Validator.isRequired("#password_confirmation", 'vui lòng xác nhận lại mật khẩu của bạn'),
+          // Validator.isConfirm('#password_confirmation', function () {
+          //   return document.querySelector('#form-1 #password').value
+          // }, 'Mật khẩu nhập lại không chính xác'),
 
-          //radio
+          // //radio
           Validator.isRequired('input[name="gender"]'),
-          Validator.isRequired('#province'),
+          // Validator.isRequired('#province'),
 
         ],
       onSubmit: function (data) {

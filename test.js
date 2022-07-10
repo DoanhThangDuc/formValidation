@@ -149,15 +149,19 @@ function Validator(option) {
                 values[input.value] = input.files;
                 break;
               //checkbox
+              //----------BUG IN HERE--------
               case "checkbox":
-                if (!input.matches(":checked")) {
+                if (input.matches(":checked")) {
+                  if (!Array.isArray(values[input.name])) {
+                    values[input.name] = [input.value];
+                  } else {
+                    values[input.name].push(input.value);
+                  }
+                  return values
+                } else {
                   values[input.name] = "";
                   return values;
                 }
-                if (!Array.isArray(values[input.name])) {
-                  values[input.name] = [];
-                }
-                values[input.name].push(input.value);
                 break;
               //radio
               case "radio":
